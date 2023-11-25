@@ -5,6 +5,8 @@ ENV LC_ALL C
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i 's/# deb/deb/g' /etc/apt/sources.list
+
+# hadolint ignore=DL3033
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
 python3 \
