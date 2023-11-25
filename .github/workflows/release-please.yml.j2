@@ -1,0 +1,21 @@
+---
+name: release-please
+"on":
+  push:
+    branches:
+      - master
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: release_please
+        uses: GoogleCloudPlatform/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: release-please-action
+{%- if vars['extra-files'] is defined %}
+          extra-files: |
+{%- for file in vars['extra-files'] %}
+            {{ file }}
+{% endfor %}
+{%- endif %}

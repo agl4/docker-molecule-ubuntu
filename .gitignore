@@ -1,0 +1,11 @@
+.DS_Store
+/vault_pass.txt
+*.log
+*.retry
+.vagrant
+/facts/
+/ansible.cfg
+ansible-roles
+/.ansible-roles/
+roles-galaxy
+/.cache
