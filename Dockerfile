@@ -8,12 +8,12 @@ RUN sed -i 's/# deb/deb/g' /etc/apt/sources.list
 
 # hadolint ignore=DL3008
 RUN apt-get update \
-&& apt-get install -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
     python3 \
     systemd \
     systemd-sysv \
-&& apt-get clean \
-&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN find /lib/systemd/system/sysinit.target.wants/ -type l | grep -v systemd-tmpfiles-setup | xargs rm -f
