@@ -1,0 +1,16 @@
+---
+name: release-please
+"on":
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: release_please
+        uses: GoogleCloudPlatform/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: release-please-action
