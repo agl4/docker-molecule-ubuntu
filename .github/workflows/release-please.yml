@@ -10,7 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: release_please
-        uses: GoogleCloudPlatform/release-please-action@v3
-        with:
-          release-type: simple
-          package-name: release-please-action
+        uses: GoogleCloudPlatform/release-please-action@v4
